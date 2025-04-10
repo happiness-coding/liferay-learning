@@ -1,0 +1,12 @@
+dependencies {
+	api project(":modules:task-management:task-management-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../task-management-api/src/main/java"
+	testDir = "../task-management-test/src/testIntegration/java"
+}
+
+group = "com.liferay.task.management"
