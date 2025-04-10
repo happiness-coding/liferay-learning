@@ -1,0 +1,7 @@
+Bundle-Name: task-management-web
+Bundle-SymbolicName: com.liferay.task.management.web
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.task.management.web.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"
