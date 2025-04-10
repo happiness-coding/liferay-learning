@@ -5,3 +5,11 @@ Export-Package: com.example.constants
 Provide-Capability:\
 	liferay.language.resources;\
 		resource.bundle.base.name="content.Language"
+
+-contract: JavaPortlet,JavaServlet
+-sources: true
+-metatype: *
+-liferay-service: true
+
+javac.source: 11
+javac.target: 11

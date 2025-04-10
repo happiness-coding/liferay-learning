@@ -1,2 +1,5 @@
 // Check GETTING_STARTED.markdown for information regarding usage.
-
+subprojects {
+    sourceCompatibility = 11
+    targetCompatibility = 11
+}
