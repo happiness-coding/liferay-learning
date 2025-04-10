@@ -1,0 +1,7 @@
+Bundle-Name: hello-world
+Bundle-SymbolicName: com.example
+Bundle-Version: 1.0.0
+Export-Package: com.example.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"
