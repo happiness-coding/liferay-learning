@@ -1,0 +1,14 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url "https://repository-cdn.liferay.com/nexus/content/groups/public"
+    }
+    mavenCentral()
+}
+dependencies {
+    implementation group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "5.0.0"
+}

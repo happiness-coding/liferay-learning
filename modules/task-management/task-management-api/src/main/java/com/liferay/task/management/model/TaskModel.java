@@ -266,7 +266,6 @@ public interface TaskModel
 	 */
 	public void setPriority(int priority);
 
-	@Override
 	public Task cloneWithOriginalValues();
 
 	public default String toXmlString() {

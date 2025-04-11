@@ -1,41 +1,23 @@
 package com.liferay.task.management.service;
 
-import com.liferay.portal.kernel.module.service.Snapshot;
 import com.liferay.task.management.service.TaskService;
+import org.osgi.framework.FrameworkUtil;
+import org.osgi.util.tracker.ServiceTracker;
 
-/**
- * Provides the remote service utility for Task. This utility wraps
- * <code>com.liferay.task.management.service.impl.TaskServiceImpl</code> and is an
- * access point for service operations in application layer code running on a
- * remote server. Methods of this service are expected to have security checks
- * based on the propagated JAAS credentials because this service can be
- * accessed remotely.
- *
- * @see TaskService
- * @generated
- */
 public class TaskServiceUtil {
 
-	/*
-	 * NOTE FOR DEVELOPERS:
-	 *
-	 * Never modify this class directly. Add custom service methods to <code>com.liferay.task.management.service.impl.TaskServiceImpl</code> and rerun ServiceBuilder to regenerate this class.
-	 */
+    private static ServiceTracker<TaskService, TaskService> _serviceTracker;
 
-	/**
-	 * Returns the OSGi service identifier.
-	 *
-	 * @return the OSGi service identifier
-	 */
-	public static String getOSGiServiceIdentifier() {
-		return getService().getOSGiServiceIdentifier();
-	}
+    static {
+        // Initialize the ServiceTracker to track the TaskService
+        _serviceTracker = new ServiceTracker<>(
+            FrameworkUtil.getBundle(TaskServiceUtil.class).getBundleContext(),
+            TaskService.class, null);
 
-	public static TaskService getService() {
-		return _serviceSnapshot.get();
-	}
+        _serviceTracker.open();
+    }
 
-	private static final Snapshot<TaskService> _serviceSnapshot =
-		new Snapshot<>(TaskServiceUtil.class, TaskService.class);
-
+    public static TaskService getService() {
+        return _serviceTracker.getService();
+    }
 }
