@@ -3,6 +3,10 @@
 <%@ page import="com.liferay.petra.string.StringPool" %>
 <%@ include file="../init.jsp" %>
 
+<%
+String currentURL = themeDisplay.getURLCurrent();
+%>
+
 <div class="container-fluid">
     <h2><liferay-ui:message key="task-list" /></h2>
 
@@ -17,7 +21,7 @@
 
     <liferay-ui:search-container
         emptyResultsMessage="no-tasks-found"
-        total="<%= TaskLocalServiceUtil.getTasksCount(scopeGroupId) %>">
+        total="<%= TaskLocalServiceUtil.getTasksCount() %>">
 
         <liferay-ui:search-container-results
             results="<%= TaskLocalServiceUtil.getTasks(scopeGroupId, searchContainer.getStart(), searchContainer.getEnd()) %>"
@@ -40,15 +44,15 @@
 
             <liferay-ui:search-container-column-text
                 name="status">
-                <span class="badge <%= task.getStatus() == 0 ? \"badge-info\" : (task.getStatus() == 1 ? \"badge-warning\" : \"badge-success\") %>">
-                    <liferay-ui:message key='<%= task.getStatus() == 0 ? "open" : (task.getStatus() == 1 ? "in-progress" : "completed") %>' />
+                <span class="badge <%= task.getStatus() == 0 ? "badge-info" : (task.getStatus() == 1 ? "badge-warning" : "badge-success") %>">
+                    <liferay-ui:message key="<%= task.getStatus() == 0 ? "open" : (task.getStatus() == 1 ? "in-progress" : "completed") %>" />
                 </span>
             </liferay-ui:search-container-column-text>
 
             <liferay-ui:search-container-column-text
                 name="priority">
-                <span class="badge <%= task.getPriority() == 0 ? \"badge-secondary\" : (task.getPriority() == 1 ? \"badge-primary\" : \"badge-danger\") %>">
-                    <liferay-ui:message key='<%= task.getPriority() == 0 ? "low" : (task.getPriority() == 1 ? "medium" : "high") %>' />
+                <span class="badge <%= task.getPriority() == 0 ? "badge-secondary" : (task.getPriority() == 1 ? "badge-primary" : "badge-danger") %>">
+                    <liferay-ui:message key="<%= task.getPriority() == 0 ? "low" : (task.getPriority() == 1 ? "medium" : "high") %>" />
                 </span>
             </liferay-ui:search-container-column-text>
 

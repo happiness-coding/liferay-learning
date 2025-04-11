@@ -1,3 +1,4 @@
 dependencies {
-	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+    compileOnly group: "com.liferay.portal", name: "release.portal.api"
+    compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "X.Y.Z"
 }
