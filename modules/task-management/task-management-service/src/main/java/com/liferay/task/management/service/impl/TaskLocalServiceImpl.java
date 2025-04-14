@@ -5,6 +5,7 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.model.User;
 import com.liferay.portal.kernel.service.ServiceContext;
 import com.liferay.task.management.model.Task;
+import com.liferay.task.management.service.TaskLocalService;
 import com.liferay.task.management.service.base.TaskLocalServiceBaseImpl;
 
 import java.util.Date;
@@ -13,10 +14,12 @@ import java.util.List;
 import org.osgi.service.component.annotations.Component;
 
 @Component(
-    property = "model.class.name=com.liferay.task.management.model.Task",
-    service = AopService.class
-)
-public class TaskLocalServiceImpl extends TaskLocalServiceBaseImpl {
+        immediate = true,
+        property = {
+                "model.class.name=com.liferay.task.management.model.Task"
+        },
+        service = TaskLocalService.class
+)public class TaskLocalServiceImpl extends TaskLocalServiceBaseImpl {
 
     public Task addTask(
         long userId, String title, String description,

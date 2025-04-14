@@ -24,7 +24,7 @@ String currentURL = themeDisplay.getURLCurrent();
         total="<%= TaskLocalServiceUtil.getTasksCount() %>">
 
         <liferay-ui:search-container-results
-            results="<%= TaskLocalServiceUtil.getTasks(scopeGroupId, searchContainer.getStart(), searchContainer.getEnd()) %>"
+                results="<%= TaskLocalServiceUtil.getTasks(searchContainer.getStart(), searchContainer.getEnd()) %>"
         />
 
         <liferay-ui:search-container-row
