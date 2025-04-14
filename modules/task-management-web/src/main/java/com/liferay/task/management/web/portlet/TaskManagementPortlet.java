@@ -12,7 +12,8 @@ import org.osgi.service.component.annotations.Component;
     property = {
         "com.liferay.portlet.display-category=category.sample",
         "com.liferay.portlet.header-portlet-css=/css/main.css",
-        "com.liferay.portlet.instanceable=false",
+        "com.liferay.portlet.instanceable=true",
+        "javax.portlet.display-name=Task Management",
         "javax.portlet.init-param.template-path=/",
         "javax.portlet.init-param.view-template=/task/view.jsp",
         "javax.portlet.name=" + TaskManagementPortletKeys.TASK_MANAGEMENT,
