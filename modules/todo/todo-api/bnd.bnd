@@ -1,6 +1,8 @@
 Bundle-Name: todo-api
 Bundle-SymbolicName: com.example.todo.api
 Bundle-Version: 1.0.0
+Import-Package: \
+	*
 Export-Package:\
 	com.example.todo.exception,\
 	com.example.todo.model,\

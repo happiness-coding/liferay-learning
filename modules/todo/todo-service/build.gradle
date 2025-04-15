@@ -1,15 +1,15 @@
 dependencies {
-	api project(":modules:todo:todo-api")
+    api project(":modules:todo:todo-api")
 
-	compileOnly group: "com.liferay.portal", name: "release.portal.api"
-	compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "4.4.0"
-	compileOnly group: "org.hibernate", name: "hibernate-core", version: "3.6.10.Final"
-
+    compileOnly group: "com.liferay.portal", name: "release.portal.api"
+    compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.2.0"
+    compileOnly group: "org.hibernate", name: "hibernate-core", version: "3.6.10.Final"
+    compileOnly group: "com.liferay", name: "com.liferay.counter.kernel", version: "2.2.0"
 }
 
 buildService {
-	apiDir = "../todo-api/src/main/java"
-	testDir = "../todo-test/src/testIntegration/java"
+    apiDir = "../todo-api/src/main/java"
+    testDir = "../todo-test/src/testIntegration/java"
 }
 
 group = "com.example.todo"
