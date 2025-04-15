@@ -11,12 +11,14 @@ import com.liferay.petra.sql.dsl.query.DSLQuery;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.model.PersistedModel;
-import com.liferay.portal.kernel.module.service.Snapshot;
 import com.liferay.portal.kernel.util.OrderByComparator;
 
 import java.io.Serializable;
-
 import java.util.List;
+
+import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
+import org.osgi.util.tracker.ServiceTracker;
 
 /**
  * Provides the local service utility for TodoItem. This utility wraps
@@ -350,11 +352,23 @@ public class TodoItemLocalServiceUtil {
 	}
 
 	public static TodoItemLocalService getService() {
-		return _serviceSnapshot.get();
+		return _serviceTracker.getService();
 	}
 
-	private static final Snapshot<TodoItemLocalService> _serviceSnapshot =
-		new Snapshot<>(
-			TodoItemLocalServiceUtil.class, TodoItemLocalService.class);
+	private static final ServiceTracker<TodoItemLocalService, TodoItemLocalService> _serviceTracker;
 
+	static {
+		Bundle bundle = FrameworkUtil.getBundle(TodoItemLocalService.class);
+
+		ServiceTracker<TodoItemLocalService, TodoItemLocalService> serviceTracker = null;
+
+		if (bundle != null) {
+			serviceTracker = new ServiceTracker<TodoItemLocalService, TodoItemLocalService>(
+				bundle.getBundleContext(), TodoItemLocalService.class, null);
+
+			serviceTracker.open();
+		}
+
+		_serviceTracker = serviceTracker;
+	}
 }
