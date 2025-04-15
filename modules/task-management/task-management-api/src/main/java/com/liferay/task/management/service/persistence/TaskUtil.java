@@ -8,6 +8,7 @@ package com.liferay.task.management.service.persistence;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.service.ServiceContext;
 import com.liferay.portal.kernel.util.OrderByComparator;
+import com.liferay.task.management.exception.NoSuchTaskException;
 import com.liferay.task.management.model.Task;
 
 import java.io.Serializable;
