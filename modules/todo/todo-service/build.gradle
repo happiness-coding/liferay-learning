@@ -2,9 +2,11 @@ dependencies {
     api project(":modules:todo:todo-api")
 
     compileOnly group: "com.liferay.portal", name: "release.portal.api"
-    compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel"
-    compileOnly group: "org.hibernate", name: "hibernate-core", version: "3.6.10.Final"
-
-    // Replace the specific counter.kernel dependency with the right format
-    compileOnly group: "com.liferay.portal", name: "com.liferay.counter.api"
 }
+
+buildService {
+    apiDir = "../todo-api/src/main/java"
+    testDir = "../todo-test/src/testIntegration/java"
+}
+
+group = "com.example.todo"
