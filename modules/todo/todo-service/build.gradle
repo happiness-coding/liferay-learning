@@ -2,6 +2,9 @@ dependencies {
 	api project(":modules:todo:todo-api")
 
 	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+	compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "4.4.0"
+	compileOnly group: "org.hibernate", name: "hibernate-core", version: "3.6.10.Final"
+
 }
 
 buildService {
