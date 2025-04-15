@@ -11,4 +11,8 @@ buildscript {
     }
 }
 
+include 'modules:todo:todo-api'
+include 'modules:todo:todo-service'
+include 'modules:todo:todo-web'
+
 apply plugin: "com.liferay.workspace"
