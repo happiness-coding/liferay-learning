@@ -1,0 +1,10 @@
+subprojects {
+    afterEvaluate {
+        repositories {
+            mavenLocal()
+            maven {
+                url "https://repository.liferay.com/nexus/content/groups/public"
+            }
+        }
+    }
+}

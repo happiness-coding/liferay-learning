@@ -1,4 +1,4 @@
-<%@ include file="/init.jsp" %>
+<%@ include file="/META-INF/resources/init.jsp" %>
 
 <div class="container-fluid">
  <div class="row">
