@@ -1,4 +1,4 @@
-Bundle-Name: todo-web
+Bundle-Name: Todo Web
 Bundle-SymbolicName: com.example.todo.web
 Bundle-Version: 1.0.0
 Export-Package: com.example.todo.web.constants

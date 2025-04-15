@@ -1,6 +1,6 @@
 <%@ page import="com.liferay.petra.string.StringPool" %>
 <%@ page import="com.liferay.portal.kernel.dao.search.ResultRow" %>
-<%@ include file="/META-INF/resources/init.jsp" %>
+<%@ include file="/init.jsp" %>
 
 <%
   ResultRow row = (ResultRow)request.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);

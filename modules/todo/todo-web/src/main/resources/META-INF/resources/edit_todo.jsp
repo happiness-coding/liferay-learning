@@ -1,4 +1,4 @@
-<%@ include file="/META-INF/resources/init.jsp" %>
+<%@ include file="/init.jsp" %>
 
 <%
     String redirect = ParamUtil.getString(request, "redirect");
